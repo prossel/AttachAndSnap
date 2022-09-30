@@ -573,6 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482665614427632269}
   - component: {fileID: 5275480276491690942}
+  - component: {fileID: 1608619608283319391}
   m_Layer: 0
   m_Name: LetterConnectors
   m_TagString: Untagged
@@ -611,6 +612,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letter: 
   nextLetter: 
+--- !u!54 &1608619608283319391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361493363517245441}
+  serializedVersion: 2
+  m_Mass: 0.01
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6520363189586789384
 GameObject:
   m_ObjectHideFlags: 0
