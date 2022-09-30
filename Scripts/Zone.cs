@@ -28,7 +28,6 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("OnTriggerEnter on " + name + " with other " + other.name);
 
         if (IsMatchingZone(other))
         {
@@ -37,15 +36,19 @@ public class Zone : MonoBehaviour
                 audioSource.Play();
             }
 
-            if (zoneType == ZoneType.Snap && connector.side == Connector.Side.right)
+            if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
-                connector.letterConnectors.OnConnected(true);
+        Debug.Log("OnTriggerEnter on " + name + " with other " + other.name);
+                connector.SnapTo(other.GetComponent<Zone>().connector);
+                //connector.letterConnectors.SetSnappable(other.GetComponent<Zone>().connector, true);
+
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+
         if (IsMatchingZone(other))
         {
             if (audioSource != null)
@@ -53,9 +56,13 @@ public class Zone : MonoBehaviour
                 audioSource.Stop();
             }
 
-            if (zoneType == ZoneType.Snap && connector.side == Connector.Side.right)
+            if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
-                connector.letterConnectors.OnConnected(false);
+        Debug.Log("OnTriggerExit on " + name + " with other " + other.name);
+                connector.UnSnapFrom(other.GetComponent<Zone>().connector);
+
+                //connector.letterConnectors.SetSnappable(other.GetComponent<Zone>().connector, false);
+                //connector.SnapTo(null);
             }
         }
     }
@@ -74,8 +81,8 @@ public class Zone : MonoBehaviour
         LetterConnectors lc = connector.letterConnectors;
         LetterConnectors lcOther = otherZone.connector.letterConnectors;
         return
-            connector.side == Connector.Side.right && otherZone.connector.side == Connector.Side.left && lc.nextLetter == lcOther.letter ||
-            connector.side == Connector.Side.left && otherZone.connector.side == Connector.Side.right && lc.letter == lcOther.nextLetter;
+            connector.side == Connector.Side.Right && otherZone.connector.side == Connector.Side.Left && lc.nextLetter == lcOther.letter ||
+            connector.side == Connector.Side.Left && otherZone.connector.side == Connector.Side.Right && lc.letter == lcOther.nextLetter;
     }
 
 }

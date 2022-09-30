@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2826584209452506894, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5275480276491690942, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
       propertyPath: letter
       value: 
@@ -698,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 6361493363517245441, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
       propertyPath: m_Name
       value: LetterConnectors
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121105007480513509, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad97eb14495993428c4e17565d02676, type: 3}

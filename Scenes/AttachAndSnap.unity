@@ -660,42 +660,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2289457133003898968, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2e92bf88a0cc13a45b3cfee23570f111, type: 3}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: c0762178f02faa34084ddcba6eb2a0a9, type: 3}
     - target: {fileID: 5782984399934083435, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
       propertyPath: letter
       value: U
@@ -752,73 +716,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Letter U
       objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: f9743eaf95cdf50438da49d12f75dd54, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: af46475d78b4c2b48bc96951a8c7d00f, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: f9743eaf95cdf50438da49d12f75dd54, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: af46475d78b4c2b48bc96951a8c7d00f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
---- !u!1 &663220806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7665534328767522528, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 663220805}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &663220807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6418746134552452932, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 663220805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663220806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &663220808 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 663220805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &663220809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8781417736137026336, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
   m_PrefabInstance: {fileID: 663220805}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &663220810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663220806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabbable: {fileID: 663220807}
-  _rigidbody: {fileID: 663220808}
-  _scaleMassWithSize: 1
 --- !u!1001 &726479154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -830,42 +734,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2289457133003898968, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2e92bf88a0cc13a45b3cfee23570f111, type: 3}
-    - target: {fileID: 5269040000147794287, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: c0762178f02faa34084ddcba6eb2a0a9, type: 3}
     - target: {fileID: 5782984399934083435, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
       propertyPath: letter
       value: E
@@ -922,30 +790,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Letter E
       objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: f9743eaf95cdf50438da49d12f75dd54, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: af46475d78b4c2b48bc96951a8c7d00f, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: f9743eaf95cdf50438da49d12f75dd54, type: 3}
-    - target: {fileID: 8565405563814935520, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-      propertyPath: _audioClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: af46475d78b4c2b48bc96951a8c7d00f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
 --- !u!4 &726479155 stripped
@@ -953,42 +797,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8781417736137026336, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
   m_PrefabInstance: {fileID: 726479154}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1007365308 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7665534328767522528, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 726479154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1007365310 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6418746134552452932, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 726479154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007365308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &1007365311 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4289706931025778868, guid: d2e14b6be1c0ec449bd6fe855d016887, type: 3}
-  m_PrefabInstance: {fileID: 726479154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1007365313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007365308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabbable: {fileID: 1007365310}
-  _rigidbody: {fileID: 1007365311}
-  _scaleMassWithSize: 1
 --- !u!1001 &1091871080
 PrefabInstance:
   m_ObjectHideFlags: 0
