@@ -28,6 +28,7 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("OnTriggerEnter " + name + " <> " + other.name + " frame " + Time.frameCount, this);
 
         if (IsMatchingZone(other))
         {
@@ -38,16 +39,14 @@ public class Zone : MonoBehaviour
 
             if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
-        Debug.Log("OnTriggerEnter on " + name + " with other " + other.name);
-                connector.SnapTo(other.GetComponent<Zone>().connector);
-                //connector.letterConnectors.SetSnappable(other.GetComponent<Zone>().connector, true);
-
+                connector.SnappableTo(other.GetComponent<Zone>().connector);
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        //Debug.Log("OnTriggerExit " + name + " <> " + other.name + " frame " + Time.frameCount, this);
 
         if (IsMatchingZone(other))
         {
@@ -58,11 +57,7 @@ public class Zone : MonoBehaviour
 
             if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
-        Debug.Log("OnTriggerExit on " + name + " with other " + other.name);
-                connector.UnSnapFrom(other.GetComponent<Zone>().connector);
-
-                //connector.letterConnectors.SetSnappable(other.GetComponent<Zone>().connector, false);
-                //connector.SnapTo(null);
+                connector.UnSnappableTo(other.GetComponent<Zone>().connector);
             }
         }
     }

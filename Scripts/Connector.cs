@@ -9,6 +9,8 @@ public class Connector : MonoBehaviour
 
     public AudioSource audioSource;
 
+    internal Connector snappableTo;
+
     public enum Side
     {
         Left, Right
@@ -35,7 +37,7 @@ public class Connector : MonoBehaviour
         audioSource = GetComponentInChildren<AudioSource>();
     }
 
-    public bool SnapTo(Connector conTarget)
+    public bool SnappableTo(Connector conTarget)
     {
         if (side != Side.Right) return false;
 
@@ -63,14 +65,19 @@ public class Connector : MonoBehaviour
 
         //joint.breakForce = 1000;
 
-        audioSource.PlayOneShot(snapClip);
+        // Establish link between snappable connectors
+        snappableTo = conTarget;
+        snappableTo.snappableTo = this;
 
-        Debug.Log("Snap");
+        Debug.Log("Snappable frame " + Time.frameCount, this);
+
+        // Notify LC
+        letterConnectors.OnSnappable(true);
 
         return true;
     }
 
-    public bool UnSnapFrom(Connector conOther)
+    public bool UnSnappableTo(Connector conOther)
     {
         if (side != Side.Right) return false;
 
@@ -85,14 +92,30 @@ public class Connector : MonoBehaviour
         // Verify other connector 's rigidbody is the same as currently connected
         if (joint.connectedBody != rbOther) return false;
 
+        Debug.Log("Unsnappable frame " + Time.frameCount, this);
+
         // Unsnap
         Destroy(joint);
-        
-        audioSource.PlayOneShot(unsnapClip);
 
-        Debug.Log("Unsnap");
+        // Notify LC
+        letterConnectors.OnSnappable(false);
+
+        // Remove link between snappable connectors
+        snappableTo.snappableTo = null;
+        snappableTo = null;
 
         return true;
     }
+
+    public void OnConnected()
+    {
+        audioSource.PlayOneShot(snapClip);
+    }
+
+    public void OnDisconnected()
+    {
+        audioSource.PlayOneShot(unsnapClip);
+    }
+
 
 }
