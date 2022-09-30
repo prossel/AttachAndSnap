@@ -51,9 +51,15 @@ public class Connector : MonoBehaviour
         // Add a joint to the body which has the right connector
         ConfigurableJoint joint = trLetter.gameObject.AddComponent<ConfigurableJoint>();
         joint.autoConfigureConnectedAnchor = false;
-        joint.connectedBody = trOtherLetter.GetComponent<Rigidbody>();
         joint.anchor = transform.localPosition;
         joint.connectedAnchor = conTarget.transform.localPosition;
+        
+        // temporaryly orient both object to the same rotation, so the target orientation is automatically calculated, otherwise its complicated
+        Quaternion bkp = trOtherLetter.rotation;
+        trOtherLetter.rotation = trLetter.rotation;
+        joint.connectedBody = trOtherLetter.GetComponent<Rigidbody>();
+        trOtherLetter.rotation = bkp;
+        //joint.targetRotation = Quaternion.identity * (conTarget.transform.rotation * Quaternion.Inverse(transform.rotation));
 
 
         joint.xMotion = ConfigurableJointMotion.Locked;
