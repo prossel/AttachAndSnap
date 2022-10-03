@@ -24,7 +24,9 @@ public class LetterConnectors : MonoBehaviour
             if (nRemainingConnections == 0)
             {
                 // TEMP Reload scene
-                UnityEngine.SceneManagement.SceneManager.LoadScene("AttachAndSnap");
+                //UnityEngine.SceneManagement.SceneManager.LoadScene("AttachAndSnap");
+
+                GetComponentInParent<LettersManager>().OnWordComplete.Invoke();
             }
         }
     }
@@ -34,6 +36,10 @@ public class LetterConnectors : MonoBehaviour
         if (connector.side == Connector.Side.Right)
         {
             nRemainingConnections++;
+            if (nRemainingConnections != 0)
+            {
+                GetComponentInParent<LettersManager>().OnWordIncomplete.Invoke();
+            }
         }
     }
 }
