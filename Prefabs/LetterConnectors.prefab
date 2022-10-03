@@ -565,8 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d6175e05ef75b4cbe71c0309ec9fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapClip: {fileID: 8300000, guid: 98e759dfda69aa7468d95f5a2c88e366, type: 3}
-  unsnapClip: {fileID: 8300000, guid: 523f822c1c7b699489c49fea2353c2de, type: 3}
+  snapClip: {fileID: 8300000, guid: 2fe7ce36e38f9194e9b84fd5edada3de, type: 3}
+  unsnapClip: {fileID: 8300000, guid: 1cfc0f6fa48699741bf44a4b71faae22, type: 3}
   onConnected:
     m_PersistentCalls:
       m_Calls: []
