@@ -687,25 +687,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2826584209452506894, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.06
+    - target: {fileID: 538405530472464209, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5275480276491690942, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
-      propertyPath: letter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5275480276491690942, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
-      propertyPath: nextLetter
-      value: 
+    - target: {fileID: 5992271977055173120, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6361493363517245441, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
       propertyPath: m_Name
       value: LetterConnectors
       objectReference: {fileID: 0}
-    - target: {fileID: 8121105007480513509, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.06
+    - target: {fileID: 6949372533460437960, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516091939502741257, guid: 5ad97eb14495993428c4e17565d02676, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad97eb14495993428c4e17565d02676, type: 3}

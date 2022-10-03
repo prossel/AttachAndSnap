@@ -1,15 +1,25 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Connector : MonoBehaviour
 {
     public AudioClip snapClip;
     public AudioClip unsnapClip;
 
-    public AudioSource audioSource;
 
-    internal Connector snappableTo;
+    public UnityEvent<Connector> onConnected;
+    public UnityEvent<Connector> onDisconnected;
+
+    protected Connector snappableTo;
+    
+    protected bool connected = false;
+    protected bool letterSelected = false;
+
+    protected AudioSource audioSource;
+    protected PointableUnityEventWrapper pointableEvents;
 
     public enum Side
     {
@@ -20,19 +30,26 @@ public class Connector : MonoBehaviour
 
     internal LetterConnectors letterConnectors;
 
+    private void OnEnable()
+    {
+        audioSource = GetComponent<AudioSource>();
+        pointableEvents = GetComponentInParent<PointableUnityEventWrapper>();
+        pointableEvents.WhenSelect.AddListener(OnSelectLetter);
+        pointableEvents.WhenUnselect.AddListener(OnUnselectLetter);
+    }
+
+    private void OnDisable()
+    {
+        pointableEvents.WhenSelect.RemoveListener(OnSelectLetter);
+        pointableEvents.WhenUnselect.RemoveListener(OnUnselectLetter);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         letterConnectors = GetComponentInParent<LetterConnectors>();
-
-        if (side == Side.Left)
-        {
-            letterConnectors.connectorLeft = this;
-        }
-        else
-        {
-            letterConnectors.connectorRight = this;
-        }
+        onConnected.AddListener(letterConnectors.OnConnected);
+        onDisconnected.AddListener(letterConnectors.OnDisconnected);
 
         audioSource = GetComponentInChildren<AudioSource>();
     }
@@ -75,10 +92,10 @@ public class Connector : MonoBehaviour
         snappableTo = conTarget;
         snappableTo.snappableTo = this;
 
-        Debug.Log("Snappable frame " + Time.frameCount, this);
+        //Debug.Log("Snappable frame " + Time.frameCount, this);
 
-        // Notify LC
-        letterConnectors.OnSnappable(true);
+        // Try to connect
+        Connect();
 
         return true;
     }
@@ -98,30 +115,77 @@ public class Connector : MonoBehaviour
         // Verify other connector 's rigidbody is the same as currently connected
         if (joint.connectedBody != rbOther) return false;
 
-        Debug.Log("Unsnappable frame " + Time.frameCount, this);
+        //Debug.Log("Unsnappable frame " + Time.frameCount, this);
 
         // Unsnap
         Destroy(joint);
-
-        // Notify LC
-        letterConnectors.OnSnappable(false);
 
         // Remove link between snappable connectors
         snappableTo.snappableTo = null;
         snappableTo = null;
 
+        Disconnect();
+        conOther.Disconnect();
+
         return true;
     }
 
-    public void OnConnected()
+    void OnSelectLetter()
     {
-        audioSource.PlayOneShot(snapClip);
+        //Debug.Log("OnSelectLetter frame " + Time.frameCount, this);
+        letterSelected = true;
+
+        // If connected and both letters selected, need to disconnect
+        if (connected && snappableTo.letterSelected)
+        {
+            Disconnect();
+        }
     }
 
-    public void OnDisconnected()
+    void OnUnselectLetter()
     {
-        audioSource.PlayOneShot(unsnapClip);
+        //Debug.Log("OnUnselectLetter frame " + Time.frameCount, this);
+        letterSelected = false;
+        Connect();
     }
 
+    bool Connect()
+    {
+        if (!connected && CanConnect())
+        {
+            Debug.Log(letterConnectors.letter + " " + side + " connected");
+            connected = true;
+            audioSource?.PlayOneShot(snapClip);
+            
+            onConnected.Invoke(this);
+
+            snappableTo?.Connect();
+
+            return true;
+        }
+        return false;
+    }
+
+    bool Disconnect()
+    {
+        if (connected && !CanConnect())
+        {
+            Debug.Log(letterConnectors.letter + " " + side + " disconnected");
+            connected = false;
+            audioSource?.PlayOneShot(unsnapClip);
+
+            onDisconnected.Invoke(this);
+
+            snappableTo?.Disconnect();
+
+            return true;
+        }
+        return false;
+    }
+
+    bool CanConnect()
+    {
+        return snappableTo != null && (!letterSelected || !snappableTo.letterSelected);
+    }
 
 }

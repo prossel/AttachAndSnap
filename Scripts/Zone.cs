@@ -10,20 +10,31 @@ public class Zone : MonoBehaviour
     }
     public ZoneType zoneType;
 
+    bool allowSound = true;
+    bool inZone = false;
+
     Connector connector;
     AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         connector = GetComponentInParent<Connector>();
         audioSource = GetComponentInChildren<AudioSource>();
+
+        connector.onConnected.AddListener(OnConnected);
+        connector.onDisconnected.AddListener(OnDisconnected);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
+        connector.onConnected.RemoveListener(OnConnected);
+        connector.onDisconnected.RemoveListener(OnDisconnected);
+    }
 
+    void AllowSound(bool allow)
+    {
+        allowSound = allow;
+        CheckSound();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,10 +43,8 @@ public class Zone : MonoBehaviour
 
         if (IsMatchingZone(other))
         {
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
+            inZone = true;
+            CheckSound();
 
             if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
@@ -50,10 +59,8 @@ public class Zone : MonoBehaviour
 
         if (IsMatchingZone(other))
         {
-            if (audioSource != null)
-            {
-                audioSource.Stop();
-            }
+            inZone = false;
+            CheckSound();
 
             if (zoneType == ZoneType.Snap && connector.side == Connector.Side.Right)
             {
@@ -61,6 +68,18 @@ public class Zone : MonoBehaviour
             }
         }
     }
+
+    private void OnConnected(Connector connector)
+    {
+        AllowSound(false);
+    }
+
+    private void OnDisconnected(Connector connector)
+    {
+        AllowSound(true);
+    }
+
+
 
     private bool IsMatchingZone(Collider other)
     {
@@ -80,4 +99,17 @@ public class Zone : MonoBehaviour
             connector.side == Connector.Side.Left && otherZone.connector.side == Connector.Side.Right && lc.letter == lcOther.nextLetter;
     }
 
+    void CheckSound()
+    {
+        if (audioSource != null)
+        {
+            if (inZone && allowSound)
+            {
+                audioSource.Play();
+            } else
+            {
+                audioSource.Pause();
+            }
+        }
+    }
 }
