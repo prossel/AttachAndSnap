@@ -2,7 +2,7 @@
 
 Unity prototype using Oculus Integration on Oculus Quest headset to manipulate letters with the hands, attach them to form a word.
 
-[<img src="https://user-images.githubusercontent.com/541021/187961380-b4c40ee4-8de0-4384-a614-fcb04e808e95.jpg" width="600" />](https://user-images.githubusercontent.com/541021/187961354-1e055969-be18-40b8-9e8a-240a4fc1a095.mp4)
+[<img src="https://user-images.githubusercontent.com/541021/193836529-29d7c694-2fbc-403a-9a50-84fd9c9bf644.jpg" width="600" />](https://user-images.githubusercontent.com/541021/193836052-59d14e1f-1ab6-4264-9228-f736e49884dc.mp4)
 
 [https://github.com/prossel/AttachAndSnap](https://github.com/prossel/AttachAndSnap)
 
